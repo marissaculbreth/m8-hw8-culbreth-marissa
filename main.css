@@ -1,6 +1,7 @@
 /* Main Menu Styling */
 .main-menu {
   display: flex;
+  position: relative;
 }
 
 .main-menu li {
@@ -11,21 +12,30 @@
   list-style-type: none;
 }
 
-.main-menu-labels {
+button {
+  padding: 2%;
+  width: 60%;
+}
+
+#products-menu-label, #services-menu-label, #company-menu-label {
   margin: 0;
   padding: 15px 0;
   background-color: #08254f;
   color: #fff;
   font-size: 18px;
+  cursor: pointer;
 }
 
 /* Sub Menu Styling */
-.sub-menu {
+.products-sub-menu, .services-sub-menu, .company-sub-menu {
   padding-left: 0;
   background-color: #dde1e7;
+  display: none;
+  position: absolute;
+  z-index: 1;
 }
 
-.sub-menu li {
+.products-sub-menu li, .services-sub-menu li, .company-sub-menu li {
   display: block;
   width: 100%;
   padding: 20px;
@@ -33,6 +43,7 @@
   box-sizing: border-box;
 }
 
-.hide {
-  display: none;
+button #products-menu-label:hover ul.products-sub-menu li {
+  display: block;
+  transition-duration: 2s;
 }
